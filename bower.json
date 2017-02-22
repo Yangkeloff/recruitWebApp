@@ -1,0 +1,23 @@
+{
+  "name": "recruitWebApp",
+  "homepage": "https://github.com/Yangkeloff/recruitWebApp",
+  "authors": [
+    "Du Yang <yangkeloff@foxmail.com>"
+  ],
+  "description": "angularjs webapp",
+  "main": "",
+  "keywords": [
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2"
+  }
+}
