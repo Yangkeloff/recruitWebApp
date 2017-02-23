@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
-    <title></title>
+    <title>WebApp</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <h1>Hello Angular</h1>
+    <div ui-view>
+
+    </div>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

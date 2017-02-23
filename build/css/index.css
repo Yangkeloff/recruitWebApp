@@ -1,3 +1,95 @@
-a {
-  font-size: 14px;
+.head {
+  background-color: #12D5B5;
+  height: 1.06666667rem;
+  line-height: 1.06666667rem;
+  padding: 0 7px;
+}
+.head .text {
+  color: #fff;
+}
+.head .custom {
+  background-color: #feae11;
+  border-color: #feae11;
+  border-style: dashed;
+  color: #fff;
+  margin-top: 0.18666667rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.foot {
+  border-top: 1px solid #d4d4d4;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  font-size: 0;
+}
+.foot li {
+  font-size: 20px;
+  width: 33%;
+  color: #9f9e9d;
+}
+.foot li.select {
+  background-color: #dbf9f4;
+  color: #01c2c3;
+}
+.foot .icon-doc {
+  background-image: url('../image/doc.png');
+  width: 25px;
+  height: 21px;
+}
+.foot .icon-search {
+  background-image: url('../image/search.png');
+  width: 24px;
+  height: 24px;
+}
+.foot .icon-me {
+  background-image: url('../image/me.png');
+  width: 23px;
+  height: 25px;
+}
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.d-ib {
+  display: inline-block;
+}
+.d-b {
+  display: block;
+}
+.ta-l {
+  text-align: left;
+}
+.ta-c {
+  text-align: center;
+}
+.ta-r {
+  text-align: right;
+}
+.va-t {
+  vertical-align: top;
+}
+.va-b {
+  vertical-align: bottom;
+}
+.va-m {
+  vertical-align: middle;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+body {
+  font-size: 0.42666667rem;
 }

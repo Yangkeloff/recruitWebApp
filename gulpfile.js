@@ -71,7 +71,7 @@ gulp.task('serve', ['build'], function() {
         livereload: true,
         port: 1234
     });
-    open('http://localhost:1234');
+    open('http://localhost:1234'); //gulp serve  启动服务器
 
     gulp.watch('bower_components/**/*', ['lib']);
     gulp.watch(app.srcPath + '**/*.html', ['html']);
@@ -79,6 +79,6 @@ gulp.task('serve', ['build'], function() {
     gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
     gulp.watch(app.srcPath + 'script/**/*.js', ['js']);
     gulp.watch(app.srcPath + 'image/**/*', ['image']); //监视源文件自动构建
-}); //gulp serve  启动服务器
+});
 
 gulp.task('default', ['serve']); //命令行只需要输入gulp自动执行gulp default==>serve
