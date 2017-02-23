@@ -51,6 +51,30 @@
   width: 23px;
   height: 25px;
 }
+.position-list {
+  margin: 0;
+  padding: 0;
+}
+.position-list .item {
+  margin: 0 3px;
+  padding: 7px 0;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+.position-list .item .logo {
+  width: 1.73333333rem;
+  height: 1.73333333rem;
+  margin-right: 13px;
+}
+.position-list .item .title {
+  margin: 0;
+}
+.position-list .item .text {
+  margin: 0;
+}
+.bg-w {
+  background-color: #fff;
+}
 .f-l {
   float: left;
 }
@@ -92,4 +116,5 @@ body {
 }
 body {
   font-size: 0.42666667rem;
+  background-color: #eee;
 }

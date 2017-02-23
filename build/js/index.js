@@ -21,7 +21,7 @@ angular.module('app')
 
     angular.module('app')
         .controller('mainCtrl', ['$scope', function() {
-
+            $scope.abc = 1;
         }]);
 'use strict';
 angular.module('app').directive('appFoot', [function() {
@@ -42,3 +42,12 @@ angular.module('app').directive('appFoot', [function() {
              templateUrl: 'view/template/head.html'
          };
      }]);
+'use strict';
+angular.module('app')
+    .directive('appPositionList', [function() {
+        return {
+            restrict: 'A',
+            replace: 'true',
+            templateUrl: 'view/template/positionList.html'
+        };
+    }]);
