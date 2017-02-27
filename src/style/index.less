@@ -1,7 +1,12 @@
 @import 'template/head.less';
 @import 'template/foot.less';
 @import 'template/positionList.less';
+@import 'template/positionInfo.less';
+@import 'template/company.less';
+@import 'template/positionClass.less';
 @import 'property.less';
+@import 'position.less';
+
 .fs(@px){
     font-size:unit(@px/37.5,rem); 
 }
@@ -48,4 +53,8 @@ html,body{
 body{
     .fs(16px);
     background-color: @bodyBgcolor;
+}
+button{
+    border-width: 0;
+    outline-width: 0;
 }
