@@ -10,10 +10,10 @@
              scope: {
                  text: '='
              },
-             link: function(scope) {
-                 scope.back = function() {
+             link: function($scope) {
+                 $scope.back = function() {
                      window.history.back();
-                 }
+                 };
              }
          };
      }]);

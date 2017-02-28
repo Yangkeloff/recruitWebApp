@@ -1,0 +1,12 @@
+<ul class="bg-w position-list">
+    <li ui-sref="position({id:item.id})" class="item" ng-repeat="item in data">
+        <!--ng-repeat='变量名 in 数组名'-->
+        <!--ui-sref="跳转到指定路由"-->
+        <img class="logo f-l" ng-src="{{item.imgSrc}}">
+        <!--ng标签一般都可以直接写变量名，例如ng-repeat.ng-bind，但ng-src是例外,要加表达式格式-->
+        <h3 class="title" ng-bind="item.name"></h3>
+        <p class="text" ng-bind="item.companyName+'['+item.cityName+']'+' '+item.industryName"></p>
+        <p class="text" ng-bind="item.date"></p>
+        <div class="clear"></div>
+    </li>
+</ul>

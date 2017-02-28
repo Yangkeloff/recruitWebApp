@@ -33,6 +33,7 @@ gulp.task('json', function() {
 
 gulp.task('less', function() {
     gulp.src(app.srcPath + 'style/index.less')
+        .pipe($.plumber())
         .pipe($.less()) //编译less
         .pipe(gulp.dest(app.devPath + 'css'))
         .pipe($.cssmin()) //压缩less
@@ -42,6 +43,7 @@ gulp.task('less', function() {
 
 gulp.task('js', function() {
     gulp.src(app.srcPath + 'script/**/*.js')
+        .pipe($.plumber()) //在编译过程中不会因错误中止服务
         .pipe($.concat('index.js')) //合并js到index.js
         .pipe(gulp.dest(app.devPath + 'js'))
         .pipe($.uglify()) //压缩js

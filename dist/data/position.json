@@ -1,0 +1,19 @@
+{
+    "id": "p3",
+    "imageSrc": "/image/company-1.png",
+    "name": "WEB前端",
+    "companyId": "c3",
+    "companyName": "腾外",
+    "cityId": "c1",
+    "cityName": "北京",
+    "scaleId": "s3",
+    "scaleName": "500人以上",
+    "industryId": "i1",
+    "industryName": "互联网",
+    "salaryId": "s2",
+    "salaryName": "8k-10k",
+    "experience": "1-3年",
+    "education": "本科",
+    "benefit": "成长空间大",
+    "description": "岗位职责：\n1...."
+}
