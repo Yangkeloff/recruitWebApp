@@ -6,7 +6,8 @@ angular.module('app')
             replace: 'true',
             templateUrl: 'view/template/positionList.html',
             scope: {
-                data: '=' //暴露'data'接口,在视图文件中调用'data=映射文件',以便复用
+                data: '=', //暴露'data'接口,在视图文件中调用'data=映射文件',以便复用
+                filterObj: '='
             }
         };
     }]);

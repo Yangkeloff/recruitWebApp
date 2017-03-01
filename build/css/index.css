@@ -120,6 +120,46 @@
 .tab li.active {
   border-bottom: 2px solid #12D5B5;
 }
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+.sheet .wrap {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  z-index: 100;
+}
+.sheet .wrap li,
+.sheet .wrap button {
+  background-color: #f1f2f3;
+  color: #1063e5;
+  font-size: 0.42666667rem;
+  height: 1.33333333rem;
+  line-height: 1.33333333rem;
+  width: 100%;
+}
+.sheet .wrap button {
+  border-radius: 5px;
+  margin-top: 8px;
+}
+.sheet .wrap ul {
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  max-height: 500px;
+}
+.sheet .wrap ul li {
+  list-style: none;
+  border-bottom: 1px solid #d4d4d4;
+}
 .positionClass {
   background-color: #fff;
   border-top: 1px solid #d4d4d4;
@@ -228,11 +268,13 @@
   position: fixed;
   left: 0;
   right: 0;
+  top: 0;
   height: 1.06666667rem;
   line-height: 1.06666667rem;
 }
 .search-bar input {
   background-color: #eee;
+  box-sizing: border-box;
   border-radius: 80px;
   border-style: none;
   outline-width: 0;
@@ -254,6 +296,9 @@
   padding-left: 20px;
   margin-left: 10px;
   color: #9f9e9d;
+}
+.search-list {
+  margin-top: 2.13333333rem;
 }
 html,
 body {
