@@ -34,7 +34,7 @@
 }
 .foot li {
   font-size: 20px;
-  width: 33%;
+  width: 33.33%;
   color: #9f9e9d;
 }
 .foot li.select {
@@ -299,6 +299,201 @@
 }
 .search-list {
   margin-top: 2.13333333rem;
+}
+.login {
+  background-image: url('../image/background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.login form {
+  margin-top: 6.93333333rem;
+}
+.login form .form-line {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  font-size: 0;
+  width: 8rem;
+  height: 1.06666667rem;
+  line-height: 1.06666667rem;
+  color: #fff;
+}
+.login form .form-line:first-child {
+  border-bottom: 1px solid #fff;
+}
+.login form .form-line .icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  width: 1.46666667rem;
+}
+.login form .form-line .account {
+  background-image: url(../image/account.png);
+}
+.login form .form-line .lock {
+  background-image: url(../image/lock.png);
+}
+.login form .form-line input {
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  outline-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  width: 6.53333333rem;
+  font-size: 0.37333333rem;
+  padding-left: 0.8rem;
+}
+.login form .form-line input::-webkit-input-placeholder {
+  color: #fff;
+}
+.login form button {
+  width: 8rem;
+  height: 0.93333333rem;
+  font-size: 22px;
+  font-weight: bold;
+}
+.login form button.login-btn {
+  margin-top: 75px;
+  background-color: #12D5B5;
+  color: #fff;
+}
+.login form button.register-btn {
+  margin-top: 20px;
+  background-color: rgba(18, 213, 181, 0.2);
+  color: #12D5B5;
+  border: 1px solid #12D5B5;
+}
+.register {
+  background-image: url('../image/background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.register form {
+  margin-top: 1.46666667rem;
+}
+.register form .form-line {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  font-size: 0;
+  width: 8rem;
+  height: 1.06666667rem;
+  line-height: 1.06666667rem;
+  color: #fff;
+}
+.register form .form-line:first-child {
+  border-bottom: 1px solid #fff;
+}
+.register form .form-line .icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  width: 1.46666667rem;
+}
+.register form .form-line .account {
+  background-image: url(../image/account.png);
+}
+.register form .form-line .lock {
+  background-image: url(../image/lock.png);
+}
+.register form .form-line input {
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  outline-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  width: 6.53333333rem;
+  font-size: 0.37333333rem;
+  padding-left: 0.8rem;
+}
+.register form .form-line input::-webkit-input-placeholder {
+  color: #fff;
+}
+.register form .message-wrap {
+  margin-top: 1.06666667rem;
+  width: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.register form .message-wrap .message-box {
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  outline-width: 0;
+  box-sizing: border-box;
+  color: #fff;
+  width: 5.06666667rem;
+  height: 1.06666667rem;
+  font-size: 0.37333333rem;
+  padding-left: 0.8rem;
+}
+.register form .message-wrap .message-box::-webkit-input-placeholder {
+  color: #fff;
+}
+.register form .message-wrap .message {
+  font-size: 0.37333333rem;
+  color: #12D5B5;
+  border: 1px solid #12D5B5;
+  padding: 0 5px;
+  margin-top: 20px;
+}
+.register form button {
+  width: 8rem;
+  height: 0.93333333rem;
+  font-size: 22px;
+  font-weight: bold;
+}
+.register form button.login-btn {
+  margin-top: 60px;
+  background-color: #12D5B5;
+  color: #fff;
+}
+.register form button.register-btn {
+  margin-top: 20px;
+  background-color: rgba(18, 213, 181, 0.2);
+  color: #12D5B5;
+  border: 1px solid #12D5B5;
+}
+.me img {
+  margin-top: 1.6rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.me .name {
+  margin-top: 0.66666667rem;
+}
+.me .btns {
+  margin-top: 1.06666667rem;
+}
+.me .btns button {
+  width: 4rem;
+  height: 2.53333333rem;
+  font-size: 0.37333333rem;
+  margin-left: 12px;
+  margin-right: 12px;
+  background-color: #12D5B5;
+  color: #fff;
+}
+.me .btns button.logout {
+  width: 9.06666667rem;
+  height: 1.06666667rem;
+  margin-top: 0.53333333rem;
+  background-color: red;
 }
 html,
 body {

@@ -74,6 +74,186 @@ angular.module('app')
             $urlRouterProvider.otherwise('main');
         }
     ]);
+'use strict';
+
+angular
+    .module('app')
+    .controller('companyCtrl', ['$http', '$scope', '$state', function($http, $scope, $state) {
+        $http.get('/data/company.json?id' + $state.params.id)
+            .then(function(resp) {
+                $scope.company = resp.data;
+            });
+    }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('favoriteCtrl', ['$scope', '$http', function($scope, $http) {
+            $http.get('/data/positionList.json')
+                .then(function(resp) {
+                    console.log(resp);
+                    $scope.list = resp.data;
+                });
+        }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
+            $http.get('/data/positionList.json')
+                .then(function(resp) {
+                    console.log(resp);
+                    $scope.list = resp.data;
+                });
+        }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
+            $http.get('/data/positionList.json')
+                .then(function(resp) {
+                    console.log(resp);
+                    $scope.list = resp.data;
+                });
+        }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('meCtrl', ['$scope', '$http', function($scope, $http) {
+            $http.get('/data/positionList.json')
+                .then(function(resp) {
+                    console.log(resp);
+                    $scope.list = resp.data;
+                });
+        }]);
+'use strict';
+
+angular
+    .module('app')
+    .controller('positionCtrl', ['$q', '$http', '$state', '$scope', 'cache', function($q, $http, $state, $scope, cache) {
+        $scope.isLogin = false;
+
+        function getPosition() {
+            var def = $q.defer(); //声明延迟加载对象
+            // $http[post'/'delete'/'put']('url',{
+            //     数据对象
+            // },{
+            //     配置对象
+            // })
+
+            // $http({
+            //     url: '',
+            //     method: '',
+            //     params: {},
+            //     data: {}
+            // })
+            $http.get('/data/position.json?id=', {
+                    params: {
+                        id: $state.params.id
+                    }
+                }).then(function(resp) {
+                    $scope.position = resp.data;
+                    def.resolve(resp);
+                })
+                .catch(function(resp) {
+                    def.reject(resp.data);
+                });
+            return def.promise;
+        }
+
+        function getCompany(id) {
+            $http.get('/data/company.json?id=' + id)
+                .then(function(resp) {
+                    $scope.company = resp.data;
+                });
+        }
+        getPosition().then(function(obj) {
+            //当返回def.promise之后调用then函数,代表异步请求之后执行的函数。函数的参数是调用def.resolve时的参数
+            getCompany(obj.companyId);
+        });
+    }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('postCtrl', ['$scope', '$http', function($scope, $http) {
+            $scope.tabList = [{
+                id: 'all',
+                name: '全部'
+            }, {
+                id: 'pass',
+                name: '面试邀请'
+            }, {
+                id: 'fail',
+                name: '不合适'
+            }];
+        }]);
+    'use strict';
+
+    angular.module('app')
+        .controller('registerCtrl', ['$scope', '$http', function($scope, $http) {
+            $http.get('/data/positionList.json')
+                .then(function(resp) {
+                    console.log(resp);
+                    $scope.list = resp.data;
+                });
+        }]);
+'use strict';
+angular
+    .module('app')
+    .controller('searchCtrl', ['$scope', '$http', 'dict', function($scope, $http, dict) {
+        $scope.search = function() {
+            $scope.name = '';
+            $http.get('data/positionList.json?name=' + $scope.name)
+                .then(function(resp) {
+                    $scope.positionList = resp.data;
+                });
+        };
+        $scope.search();
+        $scope.sheet = {};
+        $scope.filterObj = {};
+        $scope.tabList = [{
+            id: 'city',
+            name: '城市'
+        }, {
+            id: 'salary',
+            name: '薪水'
+        }, {
+            id: 'scale',
+            name: '公司规模'
+        }];
+        var tabId = '';
+        $scope.tClick = function(id, name) {
+            tabId = id;
+            $scope.sheet.list = dict[id];
+            $scope.sheet.visible = true;
+        }
+        $scope.sClick = function(id, name) {
+            if (id) {
+                angular.forEach($scope.tabList, function(item) {
+                    if (item.id === tabId) {
+                        item.name = name;
+                    }
+                });
+                $scope.filterObj[tabId + 'Id'] = id;
+            } else {
+                delete $scope.filterObj[tabId + 'Id'];
+                angular.forEach($scope.tabList, function(item) {
+                    if (item.id === tabId) {
+                        switch (item.id) {
+                            case 'city':
+                                item.name = '城市';
+                                break;
+                            case 'salary':
+                                item.name = '薪水';
+                                break;
+                            case 'scale':
+                                item.name = '公司规模';
+                                break;
+                            default:
+                        }
+                    }
+                });
+            }
+        }
+    }]);
  'use strict';
 
  angular.module('app')
@@ -220,181 +400,6 @@ angular
             }
         }
     }])
-'use strict';
-
-angular
-    .module('app')
-    .controller('companyCtrl', ['$http', '$scope', '$state', function($http, $scope, $state) {
-        $http.get('/data/company.json?id' + $state.params.id)
-            .then(function(resp) {
-                $scope.company = resp.data;
-            });
-    }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('favoriteCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('loginCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('meCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-'use strict';
-
-angular
-    .module('app')
-    .controller('positionCtrl', ['$q', '$http', '$state', '$scope', 'cache', function($q, $http, $state, $scope, cache) {
-        $scope.isLogin = false;
-
-        function getPosition() {
-            var def = $q.defer(); //声明延迟加载对象
-            // $http[post'/'delete'/'put']('url',{
-            //     数据对象
-            // },{
-            //     配置对象
-            // })
-
-            // $http({
-            //     url: '',
-            //     method: '',
-            //     params: {},
-            //     data: {}
-            // })
-            $http.get('/data/position.json?id=', {
-                    params: {
-                        id: $state.params.id
-                    }
-                }).then(function(resp) {
-                    $scope.position = resp.data;
-                    def.resolve(resp);
-                })
-                .catch(function(resp) {
-                    def.reject(resp.data);
-                });
-            return def.promise;
-        }
-
-        function getCompany(id) {
-            $http.get('/data/company.json?id=' + id)
-                .then(function(resp) {
-                    $scope.company = resp.data;
-                });
-        }
-        getPosition().then(function(obj) {
-            //当返回def.promise之后调用then函数,代表异步请求之后执行的函数。函数的参数是调用def.resolve时的参数
-            getCompany(obj.companyId);
-        });
-    }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('postCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-    'use strict';
-
-    angular.module('app')
-        .controller('registerCtrl', ['$scope', '$http', function($scope, $http) {
-            $http.get('/data/positionList.json')
-                .then(function(resp) {
-                    console.log(resp);
-                    $scope.list = resp.data;
-                });
-        }]);
-'use strict';
-angular
-    .module('app')
-    .controller('searchCtrl', ['$scope', '$http', 'dict', function($scope, $http, dict) {
-        $scope.search = function() {
-            $scope.name = '';
-            $http.get('data/positionList.json?name=' + $scope.name)
-                .then(function(resp) {
-                    $scope.positionList = resp.data;
-                });
-        };
-        $scope.search();
-        $scope.sheet = {};
-        $scope.filterObj = {};
-        $scope.tabList = [{
-            id: 'city',
-            name: '城市'
-        }, {
-            id: 'salary',
-            name: '薪水'
-        }, {
-            id: 'scale',
-            name: '公司规模'
-        }];
-        var tabId = '';
-        $scope.tClick = function(id, name) {
-            tabId = id;
-            $scope.sheet.list = dict[id];
-            $scope.sheet.visible = true;
-        }
-        $scope.sClick = function(id, name) {
-            if (id) {
-                angular.forEach($scope.tabList, function(item) {
-                    if (item.id === tabId) {
-                        item.name = name;
-                    }
-                });
-                $scope.filterObj[tabId + 'Id'] = id;
-            } else {
-                delete $scope.filterObj[tabId + 'Id'];
-                angular.forEach($scope.tabList, function(item) {
-                    if (item.id === tabId) {
-                        switch (item.id) {
-                            case 'city':
-                                item.name = '城市';
-                                break;
-                            case 'salary':
-                                item.name = '薪水';
-                                break;
-                            case 'scale':
-                                item.name = '公司规模';
-                                break;
-                            default:
-                        }
-                    }
-                });
-            }
-        }
-    }]);
 'use strict';
 
 angular
