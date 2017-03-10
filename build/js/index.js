@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('app', ['ui.router', 'ngCookies', 'validation']);
+    .module('app', ['ui.router', 'ngCookies', 'validation', 'ngAnimate']);
 document.getElementsByTagName('html')[0].style.fontSize = window.screen.width / 10 + 'px';
 'use strict'
 angular.module('app')

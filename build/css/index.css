@@ -12,7 +12,7 @@
   border-color: #feae11;
   border-style: dashed;
   color: #fff;
-  margin-top: 0.18666667rem;
+  margin-top: 0.32rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
@@ -545,6 +545,13 @@
 }
 .my-post {
   margin-top: 1.06666667rem;
+}
+.ng-enter {
+  transition: 1.0s linear all;
+  opacity: 0;
+}
+.ng-enter.ng-enter-active {
+  opacity: 1;
 }
 html,
 body {
