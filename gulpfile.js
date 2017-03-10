@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var open = require('open');
+var cleanCSS = require('gulp-clean-css');
 
 var app = {
     srcPath: 'src/',
@@ -51,6 +52,14 @@ gulp.task('js', function() {
         .pipe($.connect.reload());
 });
 
+gulp.task('minify-css', function() {
+    gulp.src(app.srcPath + 'style/css/*.css')
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(app.devPath + 'css'))
+        .pipe(gulp.dest(app.prdPath + 'css'))
+        .pipe($.connect.reload());
+});
+
 gulp.task('image', function() {
     gulp.src(app.srcPath + 'image/**/*')
         .pipe(gulp.dest(app.devPath + 'image'))
@@ -59,7 +68,7 @@ gulp.task('image', function() {
         .pipe($.connect.reload());
 });
 
-gulp.task('build', ['image', 'js', 'less', 'json', 'html', 'lib']);
+gulp.task('build', ['image', 'js', 'less', 'json', 'html', 'lib', 'minify-css']);
 //合并执行 gulp build
 
 gulp.task('clean', function() {
@@ -77,6 +86,7 @@ gulp.task('serve', ['build'], function() {
 
     gulp.watch('bower_components/**/*', ['lib']);
     gulp.watch(app.srcPath + '**/*.html', ['html']);
+    gulp.watch(app.srcPath + 'style/css/*.css', ['minify-css']);
     gulp.watch(app.srcPath + 'data/**/*.json', ['json']);
     gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
     gulp.watch(app.srcPath + 'script/**/*.js', ['js']);

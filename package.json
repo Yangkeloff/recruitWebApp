@@ -31,5 +31,8 @@
     "gulp-plumber": "^1.1.0",
     "gulp-uglify": "^2.0.1",
     "open": "^0.0.5"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^3.0.3"
   }
 }
