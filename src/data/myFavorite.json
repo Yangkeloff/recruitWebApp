@@ -1,10 +1,9 @@
-[
-  {
+[{
     "id": "p1",
-    "imageUrl": "/image/company-1.png",
+    "imgSrc": "/image/company-1.png",
     "job": "WEB前端",
     "companyId": "c1",
-    "companyName": "慕课网",
+    "companyName": "腾快",
     "cityId": "c1",
     "cityName": "北京",
     "scaleId": "s2",
@@ -19,5 +18,4 @@
     "description": "岗位职责：\n1.负责公司前端页面开发；...",
     "date": "2016-06-01 01:05",
     "select": true
-  }
-]
+}]

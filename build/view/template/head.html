@@ -1,5 +1,6 @@
 <!--一个视图只能有一个根元素-->
 <div class="head">
-    <span class="text">十秒定制职位</span>
-    <button class="custom f-r">去登陆</button>
+    <span ng-hide="name" class="text">十秒定制职位</span>
+    <button ng-hide="name" class="custom f-r" ui-sref='login'>去登录</button>
+    <span class="f-r text" ng-bind="'你好'+name"></span>
 </div>

@@ -77,6 +77,20 @@
 .position-list .item .text {
   margin: 0;
 }
+.position-list .item .icon {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 0.8rem;
+  height: 0.74666667rem;
+  top: 14px;
+  right: 12px;
+}
+.position-list .item .icon.star {
+  background-image: url(../image/star.png);
+}
+.position-list .item .icon.star-active {
+  background-image: url(../image/star-active.png);
+}
 .position-info {
   padding: 26px 10px 18px 10px;
   border-bottom: 1px solid #ccc;
@@ -313,6 +327,17 @@
 .login form {
   margin-top: 6.93333333rem;
 }
+.login form .ng-invalid + span {
+  position: absolute;
+  color: red;
+  right: 0;
+  height: 100%;
+  text-align: right;
+  font-size: 12px;
+}
+.login form .ng-invalid + span p {
+  margin: 0;
+}
 .login form .form-line {
   margin-left: auto;
   margin-right: auto;
@@ -371,7 +396,7 @@
   border: 1px solid #12D5B5;
 }
 .register {
-  background-image: url('../image/background.png');
+  background-image: url(../image/background.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: fixed;
@@ -382,6 +407,17 @@
 }
 .register form {
   margin-top: 1.46666667rem;
+}
+.register form .ng-invalid + span {
+  position: absolute;
+  color: red;
+  right: 0;
+  height: 100%;
+  text-align: right;
+  font-size: 12px;
+}
+.register form .ng-invalid + span p {
+  margin: 0;
 }
 .register form .form-line {
   margin-left: auto;
@@ -396,9 +432,9 @@
 .register form .form-line:first-child {
   border-bottom: 1px solid #fff;
 }
-.register form .form-line .icon {
+.register form .form-line span.icon {
   background-color: rgba(0, 0, 0, 0.4);
-  background-position: center;
+  background-position: 20px 10px;
   height: 100%;
   background-repeat: no-repeat;
   width: 1.46666667rem;
@@ -432,9 +468,9 @@
 .register form .message-wrap .message-box {
   border-width: 0;
   background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
   outline-width: 0;
   box-sizing: border-box;
-  color: #fff;
   width: 5.06666667rem;
   height: 1.06666667rem;
   font-size: 0.37333333rem;
@@ -449,6 +485,10 @@
   border: 1px solid #12D5B5;
   padding: 0 5px;
   margin-top: 20px;
+}
+.register form .message-wrap .message.disabled {
+  color: #d4d4d4;
+  border-color: #d4d4d4;
 }
 .register form button {
   width: 8rem;
@@ -477,6 +517,14 @@
 .me .name {
   margin-top: 0.66666667rem;
 }
+.me .login-btn {
+  width: 9.06666667rem;
+  height: 1.06666667rem;
+  margin-top: 8rem;
+  font-size: 0.42666667rem;
+  background-color: red;
+  color: #fff;
+}
 .me .btns {
   margin-top: 1.06666667rem;
 }
@@ -494,6 +542,9 @@
   height: 1.06666667rem;
   margin-top: 0.53333333rem;
   background-color: red;
+}
+.my-post {
+  margin-top: 1.06666667rem;
 }
 html,
 body {

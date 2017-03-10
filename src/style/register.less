@@ -1,14 +1,27 @@
-.register{
-    background-image: url('../image/background.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    form{
+.register {
+  background-image: url(../image/background.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  form {
     .mt(55);
+    .ng-invalid {
+      &+span {
+        position: absolute;
+        color: @dangerColor;
+        right: 0;
+        height: 100%;
+        text-align: right;
+        font-size: 12px;
+        p {
+          margin: 0;
+        }
+      }
+    }
     .form-line {
       margin-left: auto;
       margin-right: auto;
@@ -21,9 +34,9 @@
       &:first-child {
         border-bottom: 1px solid @defaultColor;
       }
-      .icon {
+      span.icon {
         background-color: @iconBgcolor;
-        background-position: center;
+        background-position: 20px 10px;
         height: 100%;
         background-repeat: no-repeat;
         .w(55);
@@ -47,19 +60,20 @@
         &::-webkit-input-placeholder{
           color: @defaultColor;
         }
+
       }
     }
-    .message-wrap{
-        .mt(40);
-        .w(300);
-        margin-left: auto;
-        margin-right: auto;
-    .message-box{
+    .message-wrap {
+      .mt(40);
+      .w(300);
+      margin-left: auto;
+      margin-right: auto;
+      .message-box {
         border-width: 0;
         background-color: @formBgcolor;
+        color: @defaultColor;
         outline-width: 0;
         box-sizing: border-box;
-        color: @defaultColor;
         .w(190);
         .h(40);
         .fs(14);
@@ -67,14 +81,18 @@
         &::-webkit-input-placeholder{
           color: @defaultColor;
         }
-    }
-    .message{
+      }
+      .message {
         .fs(14);
         color: @headBgColor;
         border: 1px solid @headBgColor;
         padding: 0 5px;
         margin-top: 20px;
-    }
+        &.disabled {
+          color: @lineColor;
+          border-color: @lineColor;
+        }
+      }
     }
     button {
       .w(300);
@@ -93,5 +111,5 @@
         border: 1px solid @headBgColor;
       }
     }
-    }
+  }
 }

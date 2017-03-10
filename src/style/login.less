@@ -9,6 +9,19 @@
     bottom: 0;
     form{
         .mt(260);
+            .ng-invalid {
+      &+span {
+        position: absolute;
+        color: @dangerColor;
+        right: 0;
+        height: 100%;
+        text-align: right;
+        font-size: 12px;
+        p {
+          margin: 0;
+        }
+      }
+    }
     .form-line {
       margin-left: auto;
       margin-right: auto;
